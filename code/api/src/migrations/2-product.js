@@ -7,6 +7,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      // TODO: update migration with order status attribute
       name: {
         type: Sequelize.STRING
       },

@@ -1,6 +1,8 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('subscriptions', {
+      // TODO: update migration with delivery date attribute
+
       id: {
         allowNull: false,
         autoIncrement: true,

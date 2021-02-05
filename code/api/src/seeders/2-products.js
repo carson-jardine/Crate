@@ -5,6 +5,8 @@ const params = require('../config/params');
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('products', [
+      // TODO: update seeder with order status attribute
+
       {
         name: 'Belt for Women',
         slug: 'belt-for-women',

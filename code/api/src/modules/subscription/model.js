@@ -3,6 +3,8 @@
 // Subscription
 module.exports = function(sequelize, DataTypes) {
   let Subscription = sequelize.define('subscriptions', {
+    // TODO: update model with delivery date attribute
+
     userId: {
       type: DataTypes.INTEGER
     },

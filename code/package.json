@@ -25,6 +25,8 @@
   "homepage": "https://github.com/atulmy/crate#readme",
   "dependencies": {},
   "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
     "concurrently": "^4.1.0"
   }
 }

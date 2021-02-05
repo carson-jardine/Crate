@@ -7,6 +7,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      // TODO: update migration with image attribute
+        // consider the scope, does admin need this functionality too?
+      // TODO: update migration with personal description attribute
+      // TODO: update migration with shipping address attribute 
       name: {
         type: Sequelize.STRING
       },

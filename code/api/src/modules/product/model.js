@@ -3,6 +3,8 @@
 // Product
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('products', {
+    // TODO: update model with order status attribute
+
     name: {
       type: DataTypes.STRING
     },

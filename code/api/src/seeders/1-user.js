@@ -6,6 +6,10 @@ const params = require('../config/params.json');
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
+    // TODO: update seeder with image attribute
+    // TODO: update seeder with personal description attribute
+    // TODO: update seeder with shipping address attribute
+
     return queryInterface.bulkInsert('users', [
       {
         name: 'The Admin',

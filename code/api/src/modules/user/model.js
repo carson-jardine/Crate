@@ -3,6 +3,10 @@
 // User
 module.exports = function(sequelize, DataTypes) {
   let User = sequelize.define('users', {
+    // TODO: update model with image attribute
+    // TODO: update model with personal description attribute
+    // TODO: update model with shipping address attribute
+
     name: {
       type: DataTypes.STRING
     },

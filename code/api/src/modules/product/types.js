@@ -5,6 +5,7 @@ import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
 const ProductType = new GraphQLObjectType({
   name: 'product',
   description: 'Product Type',
+  // TODO: update type with order status attribute
 
   fields: () => ({
     id: { type: GraphQLInt },

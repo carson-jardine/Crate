@@ -5,6 +5,9 @@ import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
 const UserType = new GraphQLObjectType({
   name: 'user',
   description: 'User type',
+  // TODO: update type with image attribute
+  // TODO: update type with personal description attribute
+  // TODO: update type with shipping address attribute
 
   fields: () => ({
     id: { type: GraphQLInt },

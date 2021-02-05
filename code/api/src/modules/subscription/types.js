@@ -9,7 +9,8 @@ import CrateType from '../crate/types'
 const SubscriptionType = new GraphQLObjectType({
   name: 'subscription',
   description: 'Subscription Type',
-
+  // TODO: update type with delivery date attribute
+  // TODO: Add seeder file for subscriptions?
   fields: () => ({
     id: { type: GraphQLInt },
     user: { type: UserType },
