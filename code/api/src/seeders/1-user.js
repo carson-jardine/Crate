@@ -21,7 +21,10 @@ module.exports = {
         password: bcrypt.hashSync('123456', config.saltRounds),
         role: params.user.roles.user,
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
+        profilePic: 'https://pbs.twimg.com/profile_images/1237550450/mstom_400x400.jpg',
+        description: "I am Tom from MySpace and I got style.",
+        shippingAddress: '1234 Cool Guy Way, Denver CO, 80216'
       }
     ])
   },
