@@ -82,3 +82,6 @@ function subscriptionsState(state) {
 }
 
 export default connect(subscriptionsState, { getListByUser })(Subscriptions)
+//line 47 add "Past crates" button which would dispatch a SHOW_HISTORY action
+//line 51ish add turnary for which should be displayed 
+//line 66 add display for all past crates

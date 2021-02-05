@@ -33,7 +33,6 @@ const Profile = (props) => (
     <Grid>
       <GridCell style={{ padding: '2em', textAlign: 'center' }}>
         <H4 style={{ marginBottom: '0.5em' }}>{props.user.details.name}</H4>
-
         <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.email}</p>
 
         <Link to={userRoutes.subscriptions.path}>
@@ -46,11 +45,22 @@ const Profile = (props) => (
   </div>
 )
 
+//line 36ish
+//Add user image submission and display
+//Add bio
+//Add shipping address
+
+//Line 41
+//Add Edit button for modal(?)
+//Modal 
+
+
 // Component Properties
 Profile.propTypes = {
   user: PropTypes.object.isRequired,
   logout: PropTypes.func.isRequired
 }
+
 
 // Component State
 function profileState(state) {

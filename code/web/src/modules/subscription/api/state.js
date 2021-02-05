@@ -129,3 +129,6 @@ export const subscription = (state = subscriptionInitialState, action) => {
       return state
   }
 }
+// line 14 add SUBSCRIPTION_GET_PAST
+//line 23 & 62 Add past: []
+// add case return {...state, SUBSCRIPTION_GET_PAST:}
