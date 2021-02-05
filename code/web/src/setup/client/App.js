@@ -22,4 +22,6 @@ const App = () => (
   </Layout>
 )
 
+//jpc notes: exports to /web/src/modules/auth/RoutePrivate
+
 export default App

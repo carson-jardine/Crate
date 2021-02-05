@@ -91,6 +91,7 @@ class Item extends PureComponent {
           <p style={{ color: grey2, marginTop: '1em', fontSize: '0.8em', textAlign: 'center' }}>
             Subscribed on { new Date(parseInt(createdAt)).toDateString() }
           </p>
+          {/* Create a date input with default value on when the delivery comes. ability to change to any date after today */}
         </div>
       </Card>
     )

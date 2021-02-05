@@ -33,6 +33,8 @@ export function login(userCredentials, isLoading = true) {
       isLoading
     })
 
+    //add description, img, 
+
     return axios.post(routeApi, query({
       operation: 'userLogin',
       variables: userCredentials,
@@ -86,6 +88,7 @@ export function register(userDetails) {
     }))
   }
 }
+//is fields the same thing as details for user? is id === role
 
 // Log out user and remove token from localStorage
 export function logout() {

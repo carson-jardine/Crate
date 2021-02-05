@@ -7,6 +7,7 @@ import { level1 } from '../common/shadows'
 // Component
 const Card = (props) => {
   const { children, ...other } = props
+  // children basically is an open param of unspecified number of jsx elements
 
   return (
     <div {...other}>

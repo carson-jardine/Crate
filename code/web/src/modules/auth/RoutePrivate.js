@@ -8,6 +8,7 @@ import { connect } from 'react-redux'
 import userRoutes from '../../setup/routes/user'
 
 // Component
+//jpc notes: comes from web/src/modules/setup/client/App.js
 const RoutePrivate = (props) => (
   props.user.isAuthenticated
     ? props.role

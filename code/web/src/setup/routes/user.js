@@ -5,6 +5,7 @@ import Profile from '../../modules/user/Profile'
 import Subscriptions from '../../modules/user/Subscriptions'
 
 // User routes
+//
 export default {
   login: {
     path: '/user/login',
@@ -16,6 +17,9 @@ export default {
     component: Signup
   },
 
+  //jpc notes:
+    //Takes the Profile component with a path and auth is true.
+    //exported to web/src/modules/auth/RoutePrivate.js
   profile: {
     path: '/user/profile',
     component: Profile,

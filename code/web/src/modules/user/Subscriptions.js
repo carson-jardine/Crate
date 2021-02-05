@@ -1,3 +1,6 @@
+//Will control local state to be able to change subscriptions.
+//option to see subscription history and what they kept.
+
 // Imports
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
@@ -44,6 +47,7 @@ class Subscriptions extends PureComponent {
             <p style={{ marginTop: '1em', color: grey2 }}>The crates you are subscribed to are listed here. You can
               cancel
               anytime.</p>
+              {/* link out to past orders here. potentially need to route this. It will render a new component*/}
           </GridCell>
         </Grid>
 

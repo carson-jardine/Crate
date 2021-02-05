@@ -9,6 +9,8 @@ export const userInitialState = {
   isAuthenticated: false,
   details: null
 }
+//jpc notes: details is where email, name, role are held. 
+//also store image, description, previous subscriptions/current subscriptions, products they kept, delivery date, shipping address
 
 // State
 export default (state = userInitialState, action) => {
