@@ -9,6 +9,8 @@ module.exports = function(sequelize, DataTypes) {
     crateId: {
       type: DataTypes.INTEGER
     }
+
+    // add deliveryDate DataTypes.DATE()
   })
 
   Subscription.associate = function(models) {

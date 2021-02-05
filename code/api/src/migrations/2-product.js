@@ -39,3 +39,5 @@ module.exports = {
     return queryInterface.dropTable('products');
   }
 }
+
+// Create migrations to ass crateId and orderStatus

@@ -23,3 +23,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   })
 }
+
+// add orderStatus DataTypes.BOOLEAN
