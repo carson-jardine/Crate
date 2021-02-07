@@ -60,14 +60,7 @@ class EditProfile extends Component {
     });
   };
 
-  identifyFormError= (requiredFields) => {
-    const infoError = requiredFields.forEach(infoType => {
-      console.log(infoType)
-      return infoType === ""
-    })
-    console.log(infoError)
-    this.setState({error: infoError})
-  }
+
 
   handleEditProfile = (event) => {
     event.preventDefault();
@@ -83,8 +76,7 @@ class EditProfile extends Component {
       bio,
     } = this.state;
     if (!street1 || !city || !state || !zip || !name || !email) {
-      console.log(street1)
-      this.identifyFormError([{name}, {email}, {street:street1}, {city}, {state}, {zip}])
+      this.setState({error: "Please enter all required fields before proceeding"})
     } else {
       const shippingAddress = {
         street1,
@@ -279,6 +271,7 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
+            {this.state.error && <p style={{ color: "red", margin: "1em" }}>{this.state.error}</p>}
             <Button theme="primary" onClick={this.handleEditProfile}>
               Save
             </Button>
