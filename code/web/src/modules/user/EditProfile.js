@@ -60,7 +60,31 @@ class EditProfile extends Component {
     });
   };
 
+  invalidateForm = () => {
+    this.setState({
+      error: "Please enter all required fields before proceeding",
+    });
+  }
 
+  validateForm = (image, name, email, bio, street1, street2, city, state, zip) => {
+    const shippingAddress = {
+      street1,
+      street2,
+      city,
+      state,
+      zip,
+    };
+    const updatedProfile = {
+      image,
+      name,
+      email,
+      bio,
+      shippingAddress,
+      role: "USER",
+    };
+    this.props.editProfile(updatedProfile);
+    this.props.history.push(userRoutes.profile.path);
+  }
 
   handleEditProfile = (event) => {
     event.preventDefault();
@@ -76,25 +100,9 @@ class EditProfile extends Component {
       bio,
     } = this.state;
     if (!street1 || !city || !state || !zip || !name || !email) {
-      this.setState({error: "Please enter all required fields before proceeding"})
+      this.invalidateForm()
     } else {
-      const shippingAddress = {
-        street1,
-        street2,
-        city,
-        state,
-        zip,
-      }
-      const updatedProfile = {
-        image,
-        name,
-        email,
-        bio,
-        shippingAddress,
-        role: "USER",
-      };
-      this.props.editProfile(updatedProfile);
-      this.props.history.push(userRoutes.profile.path);
+      this.validateForm(image, name, email, bio, street1, street2, city, state, zip)
     }
   };
 
