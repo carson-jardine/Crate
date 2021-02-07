@@ -17,65 +17,102 @@ import { editProfile } from "./api/actions"
 
 class EditProfile extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      image: '',
-      name: '',
-      email: '',
-      bio: '',
-      street1: '',
-      street2: '',
-      city: '',
-      state: '',
-      zip: ''
-    } 
+      image: "",
+      name: "",
+      email: "",
+      bio: "",
+      street1: "",
+      street2: "",
+      city: "",
+      state: "",
+      zip: "",
+      error: ""
+    };
   }
 
   componentDidMount() {
-    const { shippingAddress, image, name, email, bio} = this.props.user.details
-    // const { street1, street2, city, state, zip } = shippingAddress
-    this.setState({
-      name,
-      email
-    })
-  }
-
-  updateInput = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-  }
-
-  handleEditProfile = (event) => {
-    event.preventDefault()
-    const { street1, street2, city, state, zip, image, name, email, bio} = this.state
-    const shippingAddress = {
-      street1,
-      street2,
-      city,
-      state,
-      zip
-    }
-
-    const updatedProfile = {
+    const {
+      shippingAddress,
       image,
       name,
       email,
       bio,
-      shippingAddress,
-      role: "USER"
-    }
-    this.props.editProfile(updatedProfile)
-    this.props.history.push(userRoutes.profile.path)
+    } = this.props.user.details;
+    // const { street1, street2, city, state, zip } = shippingAddress
+    this.setState({
+      // image,
+      name,
+      email,
+      // bio,
+      // street1,
+      // street2,
+      // city,
+      // state,
+      // zip
+    });
   }
+
+  updateInput = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  identifyFormError= (requiredFields) => {
+    const infoError = requiredFields.forEach(infoType => {
+      console.log(infoType)
+      return infoType === ""
+    })
+    console.log(infoError)
+    this.setState({error: infoError})
+  }
+
+  handleEditProfile = (event) => {
+    event.preventDefault();
+    const {
+      street1,
+      street2,
+      city,
+      state,
+      zip,
+      image,
+      name,
+      email,
+      bio,
+    } = this.state;
+    if (!street1 || !city || !state || !zip || !name || !email) {
+      console.log(street1)
+      this.identifyFormError([{name}, {email}, {street:street1}, {city}, {state}, {zip}])
+    } else {
+      const shippingAddress = {
+        street1,
+        street2,
+        city,
+        state,
+        zip,
+      }
+      const updatedProfile = {
+        image,
+        name,
+        email,
+        bio,
+        shippingAddress,
+        role: "USER",
+      };
+      this.props.editProfile(updatedProfile);
+      this.props.history.push(userRoutes.profile.path);
+    }
+  };
 
   render() {
     return (
       <Grid alignCenter={true} style={{ padding: "1em" }}>
-        <GridCell style={{ textAlign: "center", margin: '2em' }}>
+        <GridCell style={{ textAlign: "center", margin: "2em" }}>
           <form>
             <h2>Edit your Bio</h2>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
+            <GridCell style={{ textAlign: "left", margin: "2em" }}>
               <label htmlFor="image">Profile Picture</label>
               <Textarea
                 label="picture"
@@ -88,8 +125,8 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
-              <label htmlFor="name">Your Name</label>
+            <GridCell style={{ textAlign: "left", margin: "2em" }}>
+              <label htmlFor="name">*Your Name</label>
               <Input
                 label="Name"
                 type="text"
@@ -102,8 +139,8 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
-              <label htmlFor="email">Your Email</label>
+            <GridCell style={{ textAlign: "left", margin: "2em" }}>
+              <label htmlFor="email">*Your Email</label>
               <Input
                 type="text"
                 fullWidth={true}
@@ -115,7 +152,7 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
+            <GridCell style={{ textAlign: "left", margin: "2em" }}>
               <label htmlFor="bio">Your Bio</label>
               <Textarea
                 type="text"
@@ -127,7 +164,8 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
+            <h4>*Your shipping address</h4>
+            <GridCell style={{ textAlign: "left", margin: "2em" }}>
               <label htmlFor="street1">Your Street</label>
               <Input
                 type="text"
@@ -140,7 +178,7 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
+            <GridCell style={{ textAlign: "left", margin: "2em" }}>
               <label htmlFor="street2">Address Line 2</label>
               <Input
                 type="text"
@@ -152,7 +190,7 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
+            <GridCell style={{ textAlign: "left", margin: "2em" }}>
               <label htmlFor="city">City</label>
               <Input
                 type="text"
@@ -165,7 +203,7 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
+            <GridCell style={{ textAlign: "left", margin: "2em" }}>
               <label htmlFor="state">State</label>
               <Select
                 type="text"
@@ -228,7 +266,7 @@ class EditProfile extends Component {
                 <option value="WY">Wyoming</option>
               </Select>
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
+            <GridCell style={{ textAlign: "left", margin: "2em" }}>
               <label htmlFor="zip">Zip Code</label>
               <Input
                 type="text"
@@ -241,12 +279,14 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-              <Button theme="primary" onClick={this.handleEditProfile}>Save</Button>
+            <Button theme="primary" onClick={this.handleEditProfile}>
+              Save
+            </Button>
           </form>
         </GridCell>
       </Grid>
     );
-    }
+  }
 };
 
 function editProfileState(state) {
