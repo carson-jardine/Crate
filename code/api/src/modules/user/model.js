@@ -14,20 +14,12 @@ module.exports = function(sequelize, DataTypes) {
     },
     role: {
       type: DataTypes.TEXT
-    },
-    profilePic: {
-      type: DataTypes.TEXT
-    },
-    description: {
-      type: DataTypes.TEXT
-    },
-    shippingAddress: {
-      type: DataTypes.TEXT
     }
   })
 
   User.associate = function(models) {
     User.hasMany(models.Subscription)
+    User.hasOne(models.ShippingAddress)
   }
 
   return User
