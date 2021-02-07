@@ -38,4 +38,5 @@ module.exports = {
   }
 }
 
+// Migrations for the subscription table.
 // Create migrations to add deliveryDate column.

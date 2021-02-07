@@ -40,3 +40,5 @@ const UserGenderType = new GraphQLObjectType({
 })
 
 export { UserType, UserLoginType, UserGenderType }
+
+// Here are the attributes assigned types for GraphQL

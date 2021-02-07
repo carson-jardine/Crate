@@ -77,3 +77,6 @@ export async function remove(parentValue, { id }) {
 export async function getGenders() {
   return Object.values(params.user.gender)
 }
+
+
+// This functionality is like the controllers in a rails app.

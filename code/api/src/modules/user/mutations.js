@@ -38,3 +38,6 @@ export const userRemove = {
   },
   resolve: remove
 }
+
+
+// This is where we can create, update and delete the user.

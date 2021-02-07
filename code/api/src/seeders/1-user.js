@@ -30,3 +30,5 @@ module.exports = {
     return queryInterface.bulkDelete('users', null, {});
   }
 }
+
+// Here we create mock objects to use to test with when we run our local host.

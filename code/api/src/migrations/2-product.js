@@ -40,4 +40,5 @@ module.exports = {
   }
 }
 
-// Create migrations to ass crateId and orderStatus
+// create initial migrations to the product table
+// Create migrations to add crateId and orderStatus

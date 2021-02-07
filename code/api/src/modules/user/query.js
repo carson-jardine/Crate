@@ -47,3 +47,6 @@ export const userGenders = {
   type: new GraphQLList(UserGenderType),
   resolve: getGenders
 }
+
+
+// Here I believe is where we create the search query for GraphQL.

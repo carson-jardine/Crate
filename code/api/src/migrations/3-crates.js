@@ -27,3 +27,6 @@ module.exports = {
     return queryInterface.dropTable('crates');
   }
 }
+
+
+// Migrations for the crate table.

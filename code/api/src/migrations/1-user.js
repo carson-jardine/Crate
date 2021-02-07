@@ -33,5 +33,5 @@ module.exports = {
     return queryInterface.dropTable('users');
   }
 }
-
+// here we create out initial migrations to our use table.
 // Create migrations to add description, shipping address, and profile image

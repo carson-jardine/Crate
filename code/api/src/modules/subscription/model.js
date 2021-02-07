@@ -13,6 +13,7 @@ module.exports = function(sequelize, DataTypes) {
     // add deliveryDate DataTypes.DATE()
   })
 
+  // This is where we define the relationships.
   Subscription.associate = function(models) {
     Subscription.belongsTo(models.User)
     Subscription.belongsTo(models.Crate)
