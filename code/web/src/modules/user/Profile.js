@@ -53,15 +53,24 @@ const Profile = (props) => (
         <p style={{ color: grey2, marginBottom: '2em' }}>
           {props.user.details.email}
         </p>
-        {props.user.details.bio && <p>My bio: {props.user.details.bio}</p>}
+        {props.user.details.bio && (
+          <div style={{ marginBottom: '2em' }}>
+            <H4 style={{ marginBottom: '.5em' }}>My bio:</H4>
+            <p style={{ color: grey2}}> {props.user.details.bio}</p>
+          </div>
+        )}
         {props.user.details.shippingAddress && (
-          <div>
-            <h4>My shipping address:</h4>
-            <p>{props.user.details.shippingAddress.street1}</p>
-            <p>{props.user.details.shippingAddress.street2}</p>
-            <p>{props.user.details.shippingAddress.city}</p>
-            <p>{props.user.details.shippingAddress.state}</p>
-            <p>{props.user.details.shippingAddress.zip}</p>
+          <div style={{ marginBottom: '2em' }}>
+            <H4 style={{ marginBottom: '.5em' }}>My shipping address:</H4>
+            <p style={{ color: grey2, marginBottom: '.5em' }}>
+              {props.user.details.shippingAddress.street1}
+            </p>
+            <p style={{ color: grey2, marginBottom: '.5em' }}>
+              {props.user.details.shippingAddress.street2}
+            </p>
+            <p style={{ color: grey2, marginBottom: '.5em' }}>
+              {`${props.user.details.shippingAddress.city}, ${props.user.details.shippingAddress.state} ${props.user.details.shippingAddress.zip}`}
+            </p>
           </div>
         )}
         <Link to={userRoutes.editProfile.path}>
