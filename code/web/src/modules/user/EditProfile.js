@@ -1,34 +1,35 @@
 //Imports
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 //UI Imports
-import Input from "../../ui/input/Input";
-import Button from "../../ui/button";
-import { Grid, GridCell } from '../../ui/grid'
-import Textarea from "../../ui/input/Textarea"
-import Select from "../../ui/input/Select"
+import Input from '../../ui/input/Input';
+import Button from '../../ui/button';
+import { Grid, GridCell } from '../../ui/grid';
+import Textarea from '../../ui/input/Textarea';
+import Select from '../../ui/input/Select';
 
 //App Imports
-import userRoutes from "../../setup/routes/user";
-import { editProfile } from "./api/actions"
+import userRoutes from '../../setup/routes/user';
+import { editProfile } from './api/actions';
 
+//Component
 class EditProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      image: "",
-      name: "",
-      email: "",
-      bio: "",
-      street1: "",
-      street2: "",
-      city: "",
-      state: "",
-      zip: "",
-      error: ""
+      image: '',
+      name: '',
+      email: '',
+      bio: '',
+      street1: '',
+      street2: '',
+      city: '',
+      state: '',
+      zip: '',
+      error: '',
     };
   }
 
@@ -62,11 +63,21 @@ class EditProfile extends Component {
 
   invalidateForm = () => {
     this.setState({
-      error: "Please enter all required fields before proceeding",
+      error: 'Please enter all required fields before proceeding',
     });
-  }
+  };
 
-  validateForm = (image, name, email, bio, street1, street2, city, state, zip) => {
+  validateForm = (
+    image,
+    name,
+    email,
+    bio,
+    street1,
+    street2,
+    city,
+    state,
+    zip
+  ) => {
     const shippingAddress = {
       street1,
       street2,
@@ -80,11 +91,11 @@ class EditProfile extends Component {
       email,
       bio,
       shippingAddress,
-      role: "USER",
+      role: 'USER',
     };
     this.props.editProfile(updatedProfile);
     this.props.history.push(userRoutes.profile.path);
-  }
+  };
 
   handleEditProfile = (event) => {
     event.preventDefault();
@@ -100,19 +111,29 @@ class EditProfile extends Component {
       bio,
     } = this.state;
     if (!street1 || !city || !state || !zip || !name || !email) {
-      this.invalidateForm()
+      this.invalidateForm();
     } else {
-      this.validateForm(image, name, email, bio, street1, street2, city, state, zip)
+      this.validateForm(
+        image,
+        name,
+        email,
+        bio,
+        street1,
+        street2,
+        city,
+        state,
+        zip
+      );
     }
   };
 
   render() {
     return (
-      <Grid alignCenter={true} style={{ padding: "1em" }}>
-        <GridCell style={{ textAlign: "center", margin: "2em" }}>
+      <Grid alignCenter={true} style={{ padding: '1em' }}>
+        <GridCell style={{ textAlign: 'center', margin: '2em' }}>
           <form>
             <h2>Edit your Bio</h2>
-            <GridCell style={{ textAlign: "left", margin: "2em" }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="image">Profile Picture</label>
               <Textarea
                 label="picture"
@@ -125,7 +146,7 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: "2em" }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="name">*Your Name</label>
               <Input
                 label="Name"
@@ -139,7 +160,7 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: "2em" }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="email">*Your Email</label>
               <Input
                 type="text"
@@ -152,7 +173,7 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: "2em" }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="bio">Your Bio</label>
               <Textarea
                 type="text"
@@ -165,7 +186,7 @@ class EditProfile extends Component {
               />
             </GridCell>
             <h4>*Your shipping address</h4>
-            <GridCell style={{ textAlign: "left", margin: "2em" }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="street1">Your Street</label>
               <Input
                 type="text"
@@ -178,7 +199,7 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: "2em" }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="street2">Address Line 2</label>
               <Input
                 type="text"
@@ -190,7 +211,7 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: "2em" }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="city">City</label>
               <Input
                 type="text"
@@ -203,7 +224,7 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: "2em" }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="state">State</label>
               <Select
                 type="text"
@@ -266,7 +287,7 @@ class EditProfile extends Component {
                 <option value="WY">Wyoming</option>
               </Select>
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: "2em" }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="zip">Zip Code</label>
               <Input
                 type="text"
@@ -279,7 +300,9 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-            {this.state.error && <p style={{ color: "red", margin: "1em" }}>{this.state.error}</p>}
+            {this.state.error && (
+              <p style={{ color: 'red', margin: '1em' }}>{this.state.error}</p>
+            )}
             <Button theme="primary" onClick={this.handleEditProfile}>
               Save
             </Button>
@@ -288,6 +311,20 @@ class EditProfile extends Component {
       </Grid>
     );
   }
+}
+
+EditProfile.propTypes = {
+  user: PropTypes.shape({
+    details: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+      role: PropTypes.string.isRequired,
+      bio: PropTypes.string,
+      image: PropTypes.string,
+      shippingAddress: PropTypes.object
+    }),
+  }),
+  editProfile: PropTypes.func.isRequired
 };
 
 function editProfileState(state) {
@@ -297,4 +334,4 @@ function editProfileState(state) {
 }
 
 // export default EditProfile
-export default connect(editProfileState, {editProfile})(EditProfile);
+export default connect(editProfileState, { editProfile })(EditProfile);
