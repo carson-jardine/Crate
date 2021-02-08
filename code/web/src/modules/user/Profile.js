@@ -26,37 +26,56 @@ const Profile = (props) => (
 
     {/* Top title bar */}
     <Grid style={{ backgroundColor: grey }}>
-      <GridCell style={{ padding: "2em", textAlign: "center" }}>
+      <GridCell style={{ padding: '2em', textAlign: 'center' }}>
         <H3 font="secondary">My profile</H3>
       </GridCell>
     </Grid>
 
     <Grid>
-      <GridCell style={{ padding: "2em", textAlign: "center" }}>
-        <img
-          src={
-            "https://icon-library.com/images/default-user-icon/default-user-icon-28.jpg"
-          }
-          alt="user-image"
-          style={{ borderRadius: "50%", height: "300px" }}
-        />
-        <H4 style={{ marginBottom: "0.5em" }}>{props.user.details.name}</H4>
-
-        <p style={{ color: grey2, marginBottom: "2em" }}>
+      <GridCell style={{ padding: '2em', textAlign: 'center' }}>
+        {!props.user.details.image && (
+          <img
+            src={
+              'https://icon-library.com/images/default-user-icon/default-user-icon-28.jpg'
+            }
+            alt="default image"
+            style={{ borderRadius: '50%', height: '300px' }}
+          />
+        )}
+        {props.user.details.image && (
+          <img
+            src={props.user.details.image}
+            alt={`${props.user.details.name}'s image`}
+            style={{ borderRadius: '50%', height: '300px' }}
+          />
+        )}
+        <H4 style={{ marginBottom: '0.5em' }}>{props.user.details.name}</H4>
+        <p style={{ color: grey2, marginBottom: '2em' }}>
           {props.user.details.email}
         </p>
+        {props.user.details.bio && <p>My bio: {props.user.details.bio}</p>}
+        {props.user.details.shippingAddress && (
+          <div>
+            <h4>My shipping address:</h4>
+            <p>{props.user.details.shippingAddress.street1}</p>
+            <p>{props.user.details.shippingAddress.street2}</p>
+            <p>{props.user.details.shippingAddress.city}</p>
+            <p>{props.user.details.shippingAddress.state}</p>
+            <p>{props.user.details.shippingAddress.zip}</p>
+          </div>
+        )}
         <Link to={userRoutes.editProfile.path}>
-          <Button theme="primary" style={{ marginRight: "1em" }}>Edit Profile</Button>
+          <Button theme="primary" style={{ marginRight: '1em' }}>
+            Edit Profile
+          </Button>
         </Link>
-
         <Link to={userRoutes.subscriptions.path}>
           <Button theme="primary">Subscriptions</Button>
         </Link>
-
         <Button
           theme="secondary"
           onClick={props.logout}
-          style={{ marginLeft: "1em" }}
+          style={{ marginLeft: '1em' }}
         >
           Logout
         </Button>
