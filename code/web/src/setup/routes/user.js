@@ -4,6 +4,7 @@ import Signup from '../../modules/user/Signup'
 import Profile from '../../modules/user/Profile'
 import Subscriptions from '../../modules/user/Subscriptions'
 import EditProfile from '../../modules/user/EditProfile'
+import PastOrders from '../../modules/user/PastOrders'
 
 // User routes
 export default {
@@ -32,6 +33,12 @@ export default {
   subscriptions: {
     path: '/user/subscriptions',
     component: Subscriptions,
+    auth: true
+  },
+
+  pastOrders: {
+    path: '/user/past-orders',
+    component: PastOrders,
     auth: true
   }
 }

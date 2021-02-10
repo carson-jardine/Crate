@@ -3,10 +3,12 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Helmet } from 'react-helmet'
+import { Link } from 'react-router-dom'
 
 // UI Imports
 import { Grid, GridCell } from '../../ui/grid'
 import { H3 } from '../../ui/typography'
+import Button from '../../ui/button'
 import { grey, grey2 } from '../../ui/common/colors'
 
 // App Imports
@@ -14,6 +16,7 @@ import { getListByUser } from '../subscription/api/actions'
 import Loading from '../common/Loading'
 import EmptyMessage from '../common/EmptyMessage'
 import SubscriptionItem from '../subscription/Item'
+import userRoutes from '../../setup/routes/user'
 
 // Component
 class Subscriptions extends PureComponent {
@@ -44,6 +47,9 @@ class Subscriptions extends PureComponent {
             <p style={{ marginTop: '1em', color: grey2 }}>The crates you are subscribed to are listed here. You can
               cancel
               anytime.</p>
+            <Link to={userRoutes.pastOrders.path}>
+              <Button theme="primary">Past Orders</Button>
+            </Link>
           </GridCell>
         </Grid>
 
