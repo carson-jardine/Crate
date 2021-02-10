@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Grid, GridCell } from '../../ui/grid'
-import { H2, H6 } from '../../ui/typography'
-import { grey1, grey4, secondary } from '../../ui/common/colors'
+import { H3, H6 } from '../../ui/typography'
+import { grey1 } from '../../ui/common/colors'
 
 class PastOrders extends PureComponent {
 
@@ -12,8 +12,8 @@ class PastOrders extends PureComponent {
 
     render() {
         return (
-            <GridCell>
-                <H2>My Past Orders</H2>
+            <GridCell style={{ textAlign: "center"}}>
+                <H3 style={{marginTop: "4em"}}>My Past Orders</H3>
                 <Grid style={{ backgroundColor: grey1, margin: "3em", padding: '.5em' }}>
                     <GridCell style={{ textAlign: "center"}}>
                         <img 

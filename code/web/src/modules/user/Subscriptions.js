@@ -47,8 +47,10 @@ class Subscriptions extends PureComponent {
             <p style={{ marginTop: '1em', color: grey2 }}>The crates you are subscribed to are listed here. You can
               cancel
               anytime.</p>
-            <Link to={userRoutes.pastOrders.path}>
-              <Button theme="primary">Past Orders</Button>
+            <Link 
+              to={userRoutes.pastOrders.path}
+            >
+              <Button theme="primary" style={{marginTop: "2em"}}>Past Orders</Button>
             </Link>
           </GridCell>
         </Grid>
