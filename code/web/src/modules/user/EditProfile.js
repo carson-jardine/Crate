@@ -71,11 +71,11 @@ class EditProfile extends Component {
 
   render() {
     return (
-      <Grid alignCenter={true} style={{ padding: "1em" }}>
-        <GridCell style={{ textAlign: "center", margin: '2em' }}>
+      <Grid alignCenter={true} style={{ padding: '1em' }}>
+        <GridCell style={{ textAlign: 'center', margin: '2em' }}>
           <form>
             <h2>Edit your Bio</h2>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="image">Profile Picture</label>
               <Textarea
                 label="picture"
@@ -88,7 +88,7 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="name">Your Name</label>
               <Input
                 label="Name"
@@ -102,7 +102,7 @@ class EditProfile extends Component {
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="email">Your Email</label>
               <Input
                 type="text"
@@ -111,11 +111,12 @@ class EditProfile extends Component {
                 placeholder="Email Address"
                 name="email"
                 autoComplete="off"
+                data-cy="email"
                 value={this.state.email}
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="bio">Your Bio</label>
               <Textarea
                 type="text"
@@ -123,11 +124,12 @@ class EditProfile extends Component {
                 placeholder="Describe Yourself"
                 name="bio"
                 autoComplete="off"
+                data-cy="bio"
                 value={this.state.bio}
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="street1">Your Street</label>
               <Input
                 type="text"
@@ -136,11 +138,12 @@ class EditProfile extends Component {
                 placeholder="Your Street"
                 name="street1"
                 autoComplete="off"
+                data-cy="street1"
                 value={this.state.street1}
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="street2">Address Line 2</label>
               <Input
                 type="text"
@@ -148,11 +151,12 @@ class EditProfile extends Component {
                 placeholder="Optional"
                 name="street2"
                 autoComplete="off"
+                data-cy="street2"
                 value={this.state.street2}
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="city">City</label>
               <Input
                 type="text"
@@ -161,11 +165,12 @@ class EditProfile extends Component {
                 placeholder="Your City"
                 name="city"
                 autoComplete="off"
+                data-cy="city"
                 value={this.state.city}
                 onChange={this.updateInput}
               />
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="state">State</label>
               <Select
                 type="text"
@@ -174,7 +179,8 @@ class EditProfile extends Component {
                 name="state"
                 value={this.state.state}
                 onChange={this.updateInput}
-              >
+                data-cy="state"
+                >
                 <option value="">Select a state</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -228,7 +234,7 @@ class EditProfile extends Component {
                 <option value="WY">Wyoming</option>
               </Select>
             </GridCell>
-            <GridCell style={{ textAlign: "left", margin: '2em' }}>
+            <GridCell style={{ textAlign: 'left', margin: '2em' }}>
               <label htmlFor="zip">Zip Code</label>
               <Input
                 type="text"
@@ -237,11 +243,14 @@ class EditProfile extends Component {
                 placeholder="Your Zip"
                 name="zip"
                 autoComplete="off"
+                data-cy="zip"
                 value={this.state.zip}
                 onChange={this.updateInput}
               />
             </GridCell>
-              <Button theme="primary" onClick={this.handleEditProfile}>Save</Button>
+            <Button theme="primary" onClick={this.handleEditProfile}>
+              Save
+            </Button>
           </form>
         </GridCell>
       </Grid>
