@@ -62,4 +62,33 @@ describe('Edit Profile', () => {
       .type('80504')
       .should('have.value', '80504');
   })
+
+  it('should show an error when a required field is not completed', () => {
+
+    cy.contains('Profile').click();
+    cy.contains('Edit Profile').click();
+    cy.contains('Edit your Bio')
+  
+      .get('[data-cy="street1"]')
+      .type('123 Fun St')
+      .should('have.value', '123 Fun St')
+  
+      .get('[data-cy="street2"]')
+      .type('PO Box 2')
+      .should('have.value', 'PO Box 2')
+  
+      .get('[data-cy="city"]')
+      .type('Denver')
+      .should('have.value', 'Denver')
+  
+    cy.get('select')
+      .select('Alabama')
+    cy.get('[data-cy="state"]')
+    cy.should('have.value', 'AL')
+  
+    cy.contains('Save').click()
+      // .get('p').should('contain', 'Please enter all required fields before proceeding')
+  })
 })
+//add a test for if the whole form is not completed 
+//add a test that checks the 
