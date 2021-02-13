@@ -17,7 +17,9 @@ import userRoutes from '../../setup/routes/user'
 import { logout } from './api/actions'
 
 // Component
-const Profile = (props) => (
+const Profile = (props) => {
+  console.log(props)
+  return (
   <div>
     {/* SEO */}
     <Helmet>
@@ -91,7 +93,7 @@ const Profile = (props) => (
       </GridCell>
     </Grid>
   </div>
-);
+)}
 
 // Component Properties
 Profile.propTypes = {

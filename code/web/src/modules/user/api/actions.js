@@ -91,6 +91,7 @@ export function register(userDetails) {
 // Log out user and remove token from localStorage
 export function logout() {
   return dispatch => {
+    console.log(logoutUnsetUserLocalStorageAndCookie)
     logoutUnsetUserLocalStorageAndCookie()
 
     dispatch({
