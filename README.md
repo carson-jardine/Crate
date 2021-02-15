@@ -19,7 +19,7 @@ This project picks up an open source brownfield codebase project for subscriptio
 * React Testing Library and Jest
 
 ## Next Steps
-We would like to ultimiately finish the track we were assigned for this project. The project spec can be found [here](https://mod4.turing.io/projects/crate/crate.html). The project rubric can be founder [here](https://mod4.turing.io/projects/crate/crate_rubric.html). The Track instructions can be found [here](https://mod4.turing.io/projects/crate/crate_project_tracks.html)
+We would like to ultimiately finish the track we were assigned for this project. The project spec can be found [here](https://mod4.turing.io/projects/crate/crate.html). The project rubric can be founder [here](https://mod4.turing.io/projects/crate/crate_rubric.html). The Track instructions can be found [here](https://mod4.turing.io/projects/crate/crate_project_tracks.html).
 
 ## Contributors
 * [JP Carey](https://github.com/jaypeasee)
