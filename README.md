@@ -17,6 +17,12 @@ This project picks up an open source brownfield codebase project for subscriptio
 * Redux
 * Cypress
 * React Testing Library and Jest
+* GraphQL
+* Sequelize 
+
+## Backend Schema 
+
+![Backend-schema-png](https://user-images.githubusercontent.com/65981543/108005259-73f2fc80-6fb5-11eb-8184-b9fb542a3494.png)
 
 ## Edit Profile Page
 ![Profile-page-gif](https://user-images.githubusercontent.com/67513823/108004172-48bade00-6fb2-11eb-8794-57b669faed75.gif)
