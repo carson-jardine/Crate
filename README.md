@@ -4,8 +4,8 @@ This project picks up an open source brownfield codebase project for subscriptio
 
 ## Setup Instructions
 1. Clone down this repository to your local machine with `git clone git@github.com:carson-jardine/Crate.git`
-1. Run `npm install`
 1. Change into the frontend with `cd Crate/code/web`
+1. Run `npm install`
 1. Run the frontend server with `npm start`
 1. Open a new Terminal tab and change into the backend with `cd Crate/code/api`
 1. Run the backend server with `npm start`
