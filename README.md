@@ -18,6 +18,12 @@ This project picks up an open source brownfield codebase project for subscriptio
 * Cypress
 * React Testing Library and Jest
 
+## Edit Profile Page
+![Profile-page-gif](https://user-images.githubusercontent.com/67513823/108004172-48bade00-6fb2-11eb-8794-57b669faed75.gif)
+
+## View Past Orders
+![past-orders](https://user-images.githubusercontent.com/67513823/108004229-7869e600-6fb2-11eb-8941-71559402e5b0.gif)
+
 ## Next Steps
 We would like to ultimiately finish the track we were assigned for this project. The project spec can be found [here](https://mod4.turing.io/projects/crate/crate.html). The project rubric can be founder [here](https://mod4.turing.io/projects/crate/crate_rubric.html). The Track instructions can be found [here](https://mod4.turing.io/projects/crate/crate_project_tracks.html).
 
